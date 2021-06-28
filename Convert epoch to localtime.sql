@@ -1,0 +1,1 @@
+select title, datetime(creationDate, 'unixepoch', 'localtime') from TMTask;
