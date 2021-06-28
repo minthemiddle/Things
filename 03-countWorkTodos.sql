@@ -28,4 +28,11 @@ FROM
 	active_tasks a
 	JOIN work_todos w ON a.project = w.uuid
 GROUP BY a.project
-order by count(*) desc;
+
+UNION
+
+select 'Total Work Tasks', count(*) as count_tasks
+from active_tasks a
+JOIN work_todos w ON a.project = w.uuid
+
+ORDER BY count(*) desc;
